@@ -46,22 +46,22 @@ namespace Yttrium_browser
                 case "FavouritesItem":
                     pageType = typeof(SettingsPage_Favorites);
                     settingsNavView.Header = "Favourites";
-                    contentFrame.NavigateToType(pageType, null, navOptions);
+                    contentFrame.Navigate(typeof(SettingsPage_Favorites), null);
                     break;
                 case "SettingsPageItem":
                     pageType = typeof(SettingsPage_History);
                     settingsNavView.Header = "History";
-                    contentFrame.NavigateToType(pageType, null, navOptions);
+                    contentFrame.Navigate(typeof(SettingsPage_History), null);
                     break;
                 case "SearchEngineItem":
                     pageType = typeof(SettingsPage_SearchEngine);
                     settingsNavView.Header = "Search Engine";
-                    contentFrame.NavigateToType(pageType, null, navOptions);
+                    contentFrame.Navigate(typeof(SettingsPage_SearchEngine), null);
                     break;
                 case "AboutItem":
                     pageType = typeof(SettingsPage_About);
                     settingsNavView.Header = "About";
-                    contentFrame.NavigateToType(pageType, null, navOptions);
+                    contentFrame.Navigate(typeof(SettingsPage_About), null);
                     break;
             }
         }
