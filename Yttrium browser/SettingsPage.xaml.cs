@@ -40,26 +40,30 @@ namespace Yttrium_browser
             FrameNavigationOptions navOptions = new FrameNavigationOptions();
             navOptions.TransitionInfoOverride = args.RecommendedNavigationTransitionInfo;
             navOptions.IsNavigationStackEnabled = false;
-
             Type pageType = null;
-            if (args.SelectedItem == FavoritesItem)
+            switch(args.SelectedItem.ToString())
             {
-                pageType = typeof(SettingsPage_Favorites);
-                settingsNavView.Header = "Favorites";
+                case "FavouritesItem":
+                    pageType = typeof(SettingsPage_Favorites);
+                    settingsNavView.Header = "Favourites";
+                    contentFrame.NavigateToType(pageType, null, navOptions);
+                    break;
+                case "SettingsPageItem":
+                    pageType = typeof(SettingsPage_History);
+                    settingsNavView.Header = "History";
+                    contentFrame.NavigateToType(pageType, null, navOptions);
+                    break;
+                case "SearchEngineItem":
+                    pageType = typeof(SettingsPage_SearchEngine);
+                    settingsNavView.Header = "Search Engine";
+                    contentFrame.NavigateToType(pageType, null, navOptions);
+                    break;
+                case "AboutItem":
+                    pageType = typeof(SettingsPage_About);
+                    settingsNavView.Header = "About";
+                    contentFrame.NavigateToType(pageType, null, navOptions);
+                    break;
             }
-            else if (args.SelectedItem == HistoryItem)
-            {
-                pageType = typeof(SettingsPage_History);
-                settingsNavView.Header = "History";
-            }
-            else if (args.SelectedItem == SearchEngineItem)
-            {
-                pageType = typeof(SettingsPage_SearchEngine);
-                settingsNavView.Header = "Search Engine";
-            }
-            contentFrame.NavigateToType(pageType, null, navOptions);
-
-
         }
 
         private void dragTitleBar_Loaded(object sender, RoutedEventArgs e)

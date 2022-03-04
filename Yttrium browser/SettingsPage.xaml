@@ -25,13 +25,12 @@
                        Width="20"
                        Height="20" />
                 <TextBlock x:Name="AppTitle"
-                           Text="Yttrium browser | Settings"
+                           Text="Yttrium settings"
                            VerticalAlignment="Center"
                            Margin="12, 0, 0, 0"
                            Style="{StaticResource CaptionTextBlockStyle}" />
             </StackPanel>
         </Border>
-
         <!-- Navigation -->
         <winui:NavigationView x:Name="settingsNavView"
                               Header="Settings"
@@ -43,27 +42,27 @@
                               SelectionChanged="settingsNavView_SelectionChanged">
             <winui:NavigationView.MenuItems>
 
-                <winui:NavigationViewItem Content="Favorites"
-                                          x:Name="FavoritesItem">
+                <winui:NavigationViewItem Content="Favorites" x:Name="FavoritesItem">
                     <winui:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE734;" />
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
-                <winui:NavigationViewItem Content="History"
-                                          x:Name="HistoryItem">
+                <winui:NavigationViewItem Content="History" x:Name="HistoryItem">
                     <winui:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE81C;" />
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
-                <winui:NavigationViewItem Content="Search Engine"
-                                          x:Name="SearchEngineItem">
+                <winui:NavigationViewItem Content="Search Engine" x:Name="SearchEngineItem">
                     <winui:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE721;" />
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
-
+                <winui:NavigationViewItem Content="About" x:Name="AboutItem">
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE946;"/>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
             </winui:NavigationView.MenuItems>
-
             <!-- Frame for switching pages -->
             <Frame x:Name="contentFrame">
             </Frame>

@@ -99,7 +99,7 @@ namespace Yttrium_browser
 
                 ToolTip tooltip = new ToolTip
                 {
-                    Content = "This website has a SSL certificate"
+                    Content = "This website has an SSL certificate"
                 };
                 ToolTipService.SetToolTip(SSLButton, tooltip);
                    
@@ -112,7 +112,7 @@ namespace Yttrium_browser
                 SSLIcon.Glyph = "\xE7BA";
                 ToolTip tooltip = new ToolTip
                 {
-                    Content = "This website is unsafe and doesn't have a SSL certificate"
+                    Content = "This website is unsafe and doesn't have an SSL certificate"
                 };
                 ToolTipService.SetToolTip(SSLButton, tooltip);
 
