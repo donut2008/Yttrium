@@ -26,5 +26,10 @@ namespace Yttrium_browser
         {
             this.InitializeComponent();
         }
+
+        private void SearchEngineChanged(object sender, RoutedEventArgs e)
+        {
+            var selectedSearchEngine=
+        }
     }
 }

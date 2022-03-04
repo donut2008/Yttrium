@@ -7,7 +7,6 @@
       mc:Ignorable="d"
       xmlns:winui="using:Microsoft.UI.Xaml.Controls"
       winui:BackdropMaterial.ApplyToRootOrPageBackground="True">
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
@@ -35,7 +34,6 @@
                                 HorizontalAlignment="Stretch"
                                 HorizontalContentAlignment="Stretch"
                                 VerticalAlignment="Stretch">
-
                     <winui:Expander.Content>
                         <!-- Listview with history items -->
                         <ListView x:Name="HistoryListView">
@@ -45,10 +43,6 @@
                     </winui:Expander.Content>
                 </winui:Expander>
             </Border>
-
-
-
         </Grid>
-
     </Grid>
 </Page>

@@ -7,8 +7,6 @@
       mc:Ignorable="d"
       xmlns:winui="using:Microsoft.UI.Xaml.Controls"
       winui:BackdropMaterial.ApplyToRootOrPageBackground="True">
-
-
     <Grid>
 
     </Grid>

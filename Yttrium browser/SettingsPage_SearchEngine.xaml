@@ -8,6 +8,15 @@
       xmlns:winui="using:Microsoft.UI.Xaml.Controls"
       winui:BackdropMaterial.ApplyToRootOrPageBackground="True">
     <Grid>
-        
+        <StackPanel Orientation="Vertical" Spacing="10">
+            <TextBlock FontStyle="{StaticResource SubTitleTextBlockStyle}">Select default search engine</TextBlock>
+            <winui:Expander x:Name="SearchEngineSelector">
+                <winui:Expander.Content>
+                    <StackPanel>
+                        <winui:RadioButtons Header="Select default search engine"></winui:RadioButtons>
+                    </StackPanel>
+                </winui:Expander.Content>
+            </winui:Expander>
+        </StackPanel>
     </Grid>
 </Page>
