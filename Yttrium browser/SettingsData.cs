@@ -12,6 +12,7 @@ namespace Yttrium_browser
 {
     public class SettingsData
     {
+        SearchEngine se = new SearchEngine();
         public async void CreateSettingsFile()
         {
             try
@@ -35,7 +36,7 @@ namespace Yttrium_browser
                         writer.WriteEndElement();
                         writer.WriteStartElement("searchengine");
                         writer.WriteStartElement("google");
-                        writer.WriteAttributeString("prefix", "https://www.google.com/search?q=");
+                        writer.WriteAttributeString("prefix", se.defaultEngine+"search?q=");
                         writer.WriteEndElement();
                         writer.WriteEndElement();
                         writer.WriteEndElement();

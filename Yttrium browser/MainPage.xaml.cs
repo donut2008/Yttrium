@@ -32,10 +32,8 @@ namespace Yttrium_browser
             SettingsData settings = new SettingsData();
             settings.CreateSettingsFile();
             this.NavigationCacheMode = NavigationCacheMode.Required;
-
-
         }
-
+        SearchEngine se = new SearchEngine();
         //back navigation
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
@@ -199,14 +197,24 @@ namespace Yttrium_browser
                 IconSource = new Microsoft.UI.Xaml.Controls.SymbolIconSource() { Symbol = Symbol.Document },
                 Header = "Blank page"
             };
+            if (se.defaultEngine == "")
+            {
+                ContentDialog nosearchengine = new ContentDialog()
+                {
+                    Title = "You haven't selected a default search engine yet!",
+                    Content = "Select a default search engine from Settings > Search engine."
+                };
+            }
+            else
+            {
+                WebView2 webView = new WebView2();
+                await webView.EnsureCoreWebView2Async();
+                webView.CoreWebView2.Navigate(se.defaultEngine);
 
-            WebView2 webView = new WebView2();
-            await webView.EnsureCoreWebView2Async();
-            webView.CoreWebView2.Navigate("https://google.com");
-
-            newTab.Content = webView;
-            sender.TabItems.Add(newTab);
-            sender.SelectedItem = newTab;
+                newTab.Content = webView;
+                sender.TabItems.Add(newTab);
+                sender.SelectedItem = newTab;
+            }
         }
 
         private  void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEventArgs args)

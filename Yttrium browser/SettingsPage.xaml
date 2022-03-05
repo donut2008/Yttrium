@@ -7,14 +7,12 @@
       mc:Ignorable="d"
       xmlns:winui="using:Microsoft.UI.Xaml.Controls"
       winui:BackdropMaterial.ApplyToRootOrPageBackground="True">
-
     <Grid>
         <Grid.RowDefinitions>
             <!--Titlebar row -->
             <RowDefinition Height="32" />
             <RowDefinition />
         </Grid.RowDefinitions>
-
         <Border Grid.Row="0" Background="Transparent" HorizontalAlignment="Stretch" x:Name="dragTitleBar" Loaded="dragTitleBar_Loaded">
             <StackPanel Orientation="Horizontal">
                 <Image x:Name="AppFontIcon"
@@ -31,17 +29,15 @@
                            Style="{StaticResource CaptionTextBlockStyle}" />
             </StackPanel>
         </Border>
+        <Frame x:Name="contentFrame"/>
         <!-- Navigation -->
-        <winui:NavigationView x:Name="settingsNavView"
-                              Header="Settings"
-                              Grid.Row="1"
-                              PaneDisplayMode="Top"
+        <winui:NavigationView x:Name="settingsNavView" Grid.Row="1"
+                              PaneDisplayMode="Left"
                               BackRequested="settingsNavView_BackRequested"
                               IsBackEnabled="True"
                               IsSettingsVisible="False"
                               SelectionChanged="settingsNavView_SelectionChanged">
             <winui:NavigationView.MenuItems>
-
                 <winui:NavigationViewItem Content="Favorites" x:Name="FavoritesItem">
                     <winui:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE734;" />
@@ -57,16 +53,14 @@
                         <FontIcon Glyph="&#xE721;" />
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
+            </winui:NavigationView.MenuItems>
+            <winui:NavigationView.FooterMenuItems>
                 <winui:NavigationViewItem Content="About" x:Name="AboutItem">
                     <winui:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE946;"/>
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
-            </winui:NavigationView.MenuItems>
-            <!-- Frame for switching pages -->
-            <Frame x:Name="contentFrame">
-            </Frame>
+            </winui:NavigationView.FooterMenuItems>
         </winui:NavigationView>
-
     </Grid>
 </Page>

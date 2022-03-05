@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using winui = Windows.UI.Xaml.Controls;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,7 +30,14 @@ namespace Yttrium_browser
 
         private void SearchEngineChanged(object sender, RoutedEventArgs e)
         {
-            var selectedSearchEngine=
+            var selectedSearchEngine = SearchEngineSelector.SelectedItem.ToString();
+            switch(selectedSearchEngine)
+            {
+                case "Google":
+                    SearchEngine se = new SearchEngine();
+                    se.defaultEngine = "https://www.google.com/";
+                    break;
+            }
         }
     }
 }

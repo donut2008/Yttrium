@@ -41,24 +41,25 @@ namespace Yttrium_browser
             navOptions.TransitionInfoOverride = args.RecommendedNavigationTransitionInfo;
             navOptions.IsNavigationStackEnabled = false;
             Type pageType = null;
-            switch(args.SelectedItem.ToString())
+            string snvsel = settingsNavView.SelectedItem.ToString();
+            switch(snvsel)
             {
-                case "FavouritesItem":
+                case "Favourites":
                     pageType = typeof(SettingsPage_Favorites);
                     settingsNavView.Header = "Favourites";
                     contentFrame.Navigate(typeof(SettingsPage_Favorites), null);
                     break;
-                case "SettingsPageItem":
+                case "History":
                     pageType = typeof(SettingsPage_History);
                     settingsNavView.Header = "History";
                     contentFrame.Navigate(typeof(SettingsPage_History), null);
                     break;
-                case "SearchEngineItem":
+                case "Search Engine":
                     pageType = typeof(SettingsPage_SearchEngine);
                     settingsNavView.Header = "Search Engine";
                     contentFrame.Navigate(typeof(SettingsPage_SearchEngine), null);
                     break;
-                case "AboutItem":
+                case "About":
                     pageType = typeof(SettingsPage_About);
                     settingsNavView.Header = "About";
                     contentFrame.Navigate(typeof(SettingsPage_About), null);
