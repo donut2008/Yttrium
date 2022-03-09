@@ -27,15 +27,26 @@ namespace Yttrium_browser
         {
             this.InitializeComponent();
         }
-
+        SearchEngine se = new SearchEngine();
         private void SearchEngineChanged(object sender, RoutedEventArgs e)
         {
             var selectedSearchEngine = SearchEngineSelector.SelectedItem.ToString();
             switch(selectedSearchEngine)
             {
                 case "Google":
-                    SearchEngine se = new SearchEngine();
-                    se.defaultEngine = "https://www.google.com/";
+                    se.defaultEngine = "https://www.google.com/search?q=";
+                    break;
+                case "Bing":
+                    se.defaultEngine = "https://www.bing.com/search?q=";
+                    break;
+                case "DuckDuckGo":
+                    se.defaultEngine = "https://duckduckgo.com/?q=";
+                    break;
+                case "Ecosia":
+                    se.defaultEngine = "https://www.ecosia.org/search?q=";
+                    break;
+                default:
+                    se.defaultEngine = "https://www.google.com/search?q=";
                     break;
             }
         }

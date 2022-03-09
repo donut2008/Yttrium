@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 namespace Yttrium_browser
 {
@@ -33,8 +34,15 @@ namespace Yttrium_browser
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            App.Current.UnhandledException += OnUnhandledException;
         }
-
+        private void OnUnhandledException(object sender, Windows.UI.Xaml.UnhandledExceptionEventArgs unhandledExceptionEventArgs)
+        {
+            new ToastContentBuilder()
+                .AddText("Uh oh...")
+                .AddText("The browser seems to have crashed. Don't worry, you can create an issue on github.com/donut2008/Yttrium/issues/new and upload the crash.xml file.")
+                .AddText("pls help");
+        }
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.

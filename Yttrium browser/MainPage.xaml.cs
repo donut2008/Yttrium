@@ -38,27 +38,20 @@ namespace Yttrium_browser
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             if (WebBrowser.CanGoBack)
-            {
                 WebBrowser.GoBack();
-
-            }
         }
 
         //forward navigation
         private void ForwardButton_Click(object sender, RoutedEventArgs e)
         {
             if (WebBrowser.CanGoForward)
-            {
                 WebBrowser.GoForward();
-            }
-
         }
 
         //refresh 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
             WebBrowser.Reload();
-
         }
 
         //navigation completed
@@ -85,9 +78,7 @@ namespace Yttrium_browser
             {
 
             }
-
             bool isSSL = false;
-
             if (WebBrowser.Source.AbsoluteUri.Contains("https"))
             {
                 //change icon to lock
@@ -137,9 +128,7 @@ namespace Yttrium_browser
         private void SearchBar_KeyDown(object sender, KeyRoutedEventArgs e)
         {
                 if (e.Key == Windows.System.VirtualKey.Enter && WebBrowser != null && WebBrowser.CoreWebView2 != null)
-                {
                     Search();
-                }
         }
 
         //if clicked on SearchBar, the text will be selected
@@ -151,7 +140,7 @@ namespace Yttrium_browser
         //method for search engine + updates link text in SearchBar
         private void Search()
         {
-            WebBrowser.Source = new Uri("https://www.google.com/search?q=" + SearchBar.Text);
+            WebBrowser.Source = new Uri(se.defaultEngine + SearchBar.Text);
             //string link = "https://" + SearchBar.Text;
             //WebBrowser.CoreWebView2.Navigate(link);
             SearchBar.Text = WebBrowser.Source.AbsoluteUri;

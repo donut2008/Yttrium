@@ -27,7 +27,6 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="32" />
             </Grid.RowDefinitions>
-
             <!-- titlebar drag area -->
             <Border x:Name="DragArea"
                     Loaded="DragArea_Loaded"
@@ -36,7 +35,6 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="4"
                     Grid.RowSpan="2" />
-
             <!-- refresh and home buttons -->
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="top"
@@ -93,7 +91,6 @@
                               FontSize="15" />
                 </Button>
             </StackPanel>
-
             <!-- SSL certification icon-->
             <Button x:Name="SSLButton"
                     VerticalAlignment="Top"
@@ -109,7 +106,6 @@
                            FontSize="15" />
 
             </Button>
-
             <!-- search bar -->
             <TextBox x:Name="SearchBar"
                      KeyDown="SearchBar_KeyDown"
@@ -123,7 +119,6 @@
                      VerticalContentAlignment="Center"
                      Grid.Row="0"
                      GotFocus="SearchBar_GotFocus"/>
-
             <!-- settings flyout -->
             <Button x:Name="MenuButton"
                     Grid.Column="3"
@@ -134,7 +129,7 @@
                     Grid.Row="0"
                     Padding="8.5">
                 <Button.Flyout>
-                    <MenuFlyout>
+                    <MenuFlyout Placement="Bottom">
                         <!-- settings button -->
                         <MenuFlyoutItem x:Name="SettingsMenuItem"
                                         Text="Settings"
@@ -148,9 +143,7 @@
 
                 <FontIcon Glyph="&#xE712;"
                           FontSize="15" />
-
             </Button>
-
             <winui:TabView x:Name="Tabs"
                            Grid.ColumnSpan="4"
                            Grid.Row="1"
@@ -178,7 +171,6 @@
 
                 </winui:TabViewItem>
             </winui:TabView>
-
             <!-- statusbar text -->
             <TextBlock x:Name="StatusText"
                        Grid.Row="2"
@@ -188,9 +180,6 @@
                        Margin="10,0,10,0"
                        Height="19"
                        Canvas.ZIndex="1" />
-
-
-
         </Grid>
     </Grid>
 </Page>
