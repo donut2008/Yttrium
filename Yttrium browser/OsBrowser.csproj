@@ -7,8 +7,8 @@
     <ProjectGuid>{1D1D01E7-FECF-4441-A230-240A15D7D624}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Yttrium_browser</RootNamespace>
-    <AssemblyName>Yttrium browser</AssemblyName>
+    <RootNamespace>OsBrowser</RootNamespace>
+    <AssemblyName>Osmium browser</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.22000.0</TargetPlatformVersion>
@@ -253,6 +253,9 @@
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=255.255.255.255, Culture=neutral, PublicKeyToken=null" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

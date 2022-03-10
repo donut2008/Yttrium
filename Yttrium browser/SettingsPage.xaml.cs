@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Yttrium_browser
+namespace OsBrowser
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -25,7 +25,6 @@ namespace Yttrium_browser
         public SettingsPage()
         {
             this.InitializeComponent();
-            settingsNavView.SelectedItem = FavoritesItem;
         }
 
         private void settingsNavView_BackRequested(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewBackRequestedEventArgs args)
@@ -34,7 +33,7 @@ namespace Yttrium_browser
                 Frame.GoBack();
         }
 
-
+        /*
         private void settingsNavView_SelectionChanged(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewSelectionChangedEventArgs args)
         {
             FrameNavigationOptions navOptions = new FrameNavigationOptions();
@@ -66,7 +65,7 @@ namespace Yttrium_browser
                     break;
             }
         }
-
+        */
         private void dragTitleBar_Loaded(object sender, RoutedEventArgs e)
         {
             Window.Current.SetTitleBar(sender as Border);

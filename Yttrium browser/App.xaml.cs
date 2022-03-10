@@ -19,7 +19,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.Toolkit.Uwp.Notifications;
 
-namespace Yttrium_browser
+namespace OsBrowser
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -40,7 +40,7 @@ namespace Yttrium_browser
         {
             new ToastContentBuilder()
                 .AddText("Uh oh...")
-                .AddText("The browser seems to have crashed. Don't worry, you can create an issue on github.com/donut2008/Yttrium/issues/new and upload the crash.xml file.")
+                .AddText("The browser seems to have crashed. Don't worry, you can create an issue on github.com/donut2008/OsBrowser/issues/new and upload the crash.xml file.")
                 .AddText("pls help");
         }
         /// <summary>

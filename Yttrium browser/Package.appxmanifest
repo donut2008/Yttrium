@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="Yttrium_browser.App">
+      EntryPoint="MoBrowser.App">
       <uap:VisualElements
-        DisplayName="Yttrium browser"
+        DisplayName="Molybdenum browser"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="Yttrium browser"
+        Description="Molybdenum browser"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png" ShortName="Yttrium">
           <uap:ShowNameOnTiles>

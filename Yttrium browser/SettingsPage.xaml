@@ -1,7 +1,7 @@
-﻿<Page x:Class="Yttrium_browser.SettingsPage"
+﻿<Page x:Class="OsBrowser.SettingsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:local="using:Yttrium_browser"
+      xmlns:local="using:OsBrowser"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d"
@@ -29,8 +29,9 @@
                            Style="{StaticResource CaptionTextBlockStyle}" />
             </StackPanel>
         </Border>
+        <!--
         <Frame x:Name="contentFrame"/>
-        <!-- Navigation -->
+        --><!-- Navigation --><!--
         <winui:NavigationView x:Name="settingsNavView" Grid.Row="1"
                               PaneDisplayMode="Left"
                               BackRequested="settingsNavView_BackRequested"
@@ -62,5 +63,6 @@
                 </winui:NavigationViewItem>
             </winui:NavigationView.FooterMenuItems>
         </winui:NavigationView>
+        -->
     </Grid>
 </Page>

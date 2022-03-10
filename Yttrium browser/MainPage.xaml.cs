@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace Yttrium_browser
+namespace OsBrowser
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -40,20 +40,17 @@ namespace Yttrium_browser
             if (WebBrowser.CanGoBack)
                 WebBrowser.GoBack();
         }
-
         //forward navigation
         private void ForwardButton_Click(object sender, RoutedEventArgs e)
         {
             if (WebBrowser.CanGoForward)
                 WebBrowser.GoForward();
         }
-
         //refresh 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
             WebBrowser.Reload();
         }
-
         //navigation completed
         private void WebBrowser_NavigationCompleted(WebView2 sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs args)
         {
@@ -62,7 +59,7 @@ namespace Yttrium_browser
             {
                 StatusText.Text = WebBrowser.Source.AbsoluteUri;
                 WebBrowser.CoreWebView2.Settings.IsStatusBarEnabled = false;
-                //appTitle.Text = "Yttrium browser | " + WebBrowser.CoreWebView2.DocumentTitle;
+                //appTitle.Text = "Osmium browser | " + WebBrowser.CoreWebView2.DocumentTitle;
                 SearchBar.Text = WebBrowser.Source.AbsoluteUri;
                 RefreshButton.Visibility = Visibility.Visible;
                 StopRefreshButton.Visibility = Visibility.Collapsed;
@@ -91,7 +88,6 @@ namespace Yttrium_browser
                     Content = "This website has an SSL certificate"
                 };
                 ToolTipService.SetToolTip(SSLButton, tooltip);
-                   
             }
             else
             {
@@ -104,10 +100,7 @@ namespace Yttrium_browser
                     Content = "This website is unsafe and doesn't have an SSL certificate"
                 };
                 ToolTipService.SetToolTip(SSLButton, tooltip);
-
             }
-
-
             //            await WebBrowser.EnsureCoreWebView2Async();
             //            await WebBrowser.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync(@"
             //document.addEventListener('DOMContentLoaded', function() {
@@ -123,20 +116,17 @@ namespace Yttrium_browser
             //  document.head.append(style);
             //}, false);");
         }
-
         //if enter is pressed, it searches text in SearchBar or goes to web page
         private void SearchBar_KeyDown(object sender, KeyRoutedEventArgs e)
         {
                 if (e.Key == Windows.System.VirtualKey.Enter && WebBrowser != null && WebBrowser.CoreWebView2 != null)
                     Search();
         }
-
         //if clicked on SearchBar, the text will be selected
         private void SearchBar_GotFocus(object sender, RoutedEventArgs e)
         {
             SearchBar.SelectAll();
         }
-
         //method for search engine + updates link text in SearchBar
         private void Search()
         {
@@ -146,39 +136,31 @@ namespace Yttrium_browser
             SearchBar.Text = WebBrowser.Source.AbsoluteUri;
 
         }
-
         //home button redirects to homepage
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
         //opens settings page
         private void SettingsMenuItem_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(SettingsPage));
         }
-
-
         //handles progressring and refresh behavior
         private void WebBrowser_NavigationStarting(WebView2 sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs args)
         {
             RefreshButton.Visibility = Visibility.Collapsed;
             StopRefreshButton.Visibility = Visibility.Visible;
         }
-
         //stops refreshing if clicked on progressbar
         private void StopRefreshButton_Click(object sender, RoutedEventArgs e)
         {
             WebBrowser.CoreWebView2.Stop();
         }
-
         private void DragArea_Loaded(object sender, RoutedEventArgs e)
         {
             Window.Current.SetTitleBar(sender as Border);
-
         }
-
         private async void Tabs_AddTabButtonClick(TabView sender, object args)
         {
             var newTab = new Microsoft.UI.Xaml.Controls.TabViewItem
@@ -205,15 +187,26 @@ namespace Yttrium_browser
                 sender.SelectedItem = newTab;
             }
         }
-
         private  void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEventArgs args)
         {
             if (sender.TabItems.Count <= 1)
                 Tabs_AddTabButtonClick(sender, args);
-
             sender.TabItems.Remove(args.Tab);
         }
-
+        private void AboutItemClick(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SettingsPage_About));
+        }
+        private async void FeedbackClick(object sender, RoutedEventArgs e)
+        {
+            ContentDialog fileFeedback = new ContentDialog()
+            {
+                Title = "How to file feedback?",
+                Content = "Go to \"https://github.com/donut2008/OsBrowser/issues/new\" to create a new issue, make sure to follow the instructions on filing feedback!",
+                CloseButtonText = "OK",
+            };
+            await fileFeedback.ShowAsync();
+        }
     }
 }
 
