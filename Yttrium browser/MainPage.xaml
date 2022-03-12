@@ -169,7 +169,7 @@
                 <winui:TabView.TabStripFooter>
                     <Grid/>
                 </winui:TabView.TabStripFooter>
-                <winui:TabViewItem Header="Blank">
+                <winui:TabViewItem Header="Blank" BorderBrush="{StaticResource SystemAccentColor}" BorderThickness="2">
                     <winui:TabViewItem.IconSource>
                         <winui:SymbolIconSource Symbol="Add" />
                     </winui:TabViewItem.IconSource>

@@ -181,7 +181,6 @@ namespace OsBrowser
                 WebView2 webView = new WebView2();
                 await webView.EnsureCoreWebView2Async();
                 webView.CoreWebView2.Navigate(se.defaultEngine);
-
                 newTab.Content = webView;
                 sender.TabItems.Add(newTab);
                 sender.SelectedItem = newTab;
